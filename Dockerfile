@@ -1,6 +1,6 @@
 FROM tomcat:8.5
 
-RUN apt update && apt install -y mvn
+RUN apt update && apt install -y maven
 
 ADD pom.xml /tmp/build/
 RUN cd /tmp/build && mvn -q dependency:resolve
