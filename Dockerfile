@@ -1,4 +1,6 @@
-FROM 10.82.120.149/daocloud/tomcat-openjdk-maven:1.0
+FROM tomcat:8.5
+
+RUN apt update && apt install -y mvn
 
 ADD pom.xml /tmp/build/
 RUN cd /tmp/build && mvn -q dependency:resolve
